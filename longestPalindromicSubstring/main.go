@@ -20,7 +20,7 @@ func longPalindSubstr(s string) string {
       twoD[i][i] = true // diagonal repr. single character
   }
 
-  // for length 2 to l-1, check if they are a palindrome
+  // for substr of length 2 to l, check if they are a palindrome
   for k := 1; k<=l-1; k++ {
     for i := 0; i<l; i++ {
       j := i+k
@@ -33,8 +33,8 @@ func longPalindSubstr(s string) string {
           palindromeSoFar = s[i:j+1]
         }
       }
-    }// end of inner for-loop
-  }// end of outer for-loop
+    }
+  }
 
   if len(palindromeSoFar) == 0 {
     return "No palindrome found"
